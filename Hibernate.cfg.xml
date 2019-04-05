@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+
+<!--  Configuration de la connexion -->
+<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gestioncentre?serverTimezone=UTC</property>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password">root</property>
+<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<!-- Configuration des propriétés de hibernate -->
+<property name="hibernate.hbm2ddl.auto">update</property>
+<!-- Les valeurs possibles : create, update, validate, create-drop -->
+
+
+<!--  Declarer le dialect correspondant à MySQL -->
+<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+
+<!--  or use
+org.hibernate.dialect.MYSQL5DIALECT
+org.hibernate.dialect.MYSQL5DIALECT
+org.hibernate.dialect.MYSQL7DIALECT
+ -->
+ <!--  Afficher les requetes SQL générées (true) -->
+<property name="hibernate.show_sql">true</property>
+
+
+<!-- Déclaration des fichiers de mapping -->
+<mapping class="Apprenants"/>
+<mapping class="ConnectionDB"/>
+<mapping class="Consultants"/>
+<mapping class="CycleFormation"/>
+<mapping class="Personne"/>
+<mapping class="ApprenantService"/>
+<mapping class="ConsultantService"/>
+<mapping class="FormationService"/>
+<mapping class="GestionFormation"/>
+
+
+
+</session-factory>
+</hibernate-configuration>
